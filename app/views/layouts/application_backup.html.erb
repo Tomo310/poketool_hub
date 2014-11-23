@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+<body>
+	<header id="navbar">
+		<div class= "site-box">
+			<div class="container">
+				<%= link_to "Poketool Hub", root_path, id: "logo" %>
+				<ul class="nav header">
+					<li><%= link_to "Home", root_path, class: "nav" %></li>
+					<li><%= link_to "Help", '#', class: "nav" %></li>
+					<li><%= link_to "ポケモン図鑑", '#', class: "nav" %></li>
+					<li><%= link_to "ダメージ計算機", '#', class: "nav" %></li>
+					<li><ul class="dropmenu">
+						<li><%= link_to "その他 ▼", '#', class: "nav" %>
+							<ul>
+								<li><%= link_to "個体値・ステータス判定", '#' %></li>
+								<li><%= link_to "個体管理ツール", '#' %></li>
+							</ul>
+						</li>
+					</ul></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+
+	<div class= "site-box">
+		<div class="container">
+			<%= yield %>
+			<%= debug(params) if Rails.env.development? %>
+		</div>
+	</div>
+</body>
+</html>

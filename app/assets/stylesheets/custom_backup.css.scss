@@ -1,0 +1,140 @@
+@import url("normalize.css");
+
+/* universal */
+
+.site-box {
+	width: 920px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center {
+	text-align: center;
+	h1 {
+		margin-bottom: 10px;
+	}
+}
+
+/* header */
+
+#navbar {
+	background-color: #222;
+	height: 2em;
+	white-space: nowrap;
+	#logo {
+		text-decoration: none;
+		float: left;
+		margin-right: 10px;
+		font-size: 1.7em;
+		color: #fff;
+	}
+
+	ul.header {
+		background: transparent;
+		float: left;
+		margin: 0;
+		padding: 0;
+		display: inline;
+		height: 2em;
+		> li {
+			float: left;
+			margin: 0.5em;
+			padding: 0;
+			display: inline-block;
+			&:hover {
+				background-color: #555;
+			}
+		}
+		li {
+			a {
+				text-decoration: none;
+				font-weight: bold;
+				color: #eee;
+			}
+
+			ul.dropmenu {
+				list-style-type: none;
+
+				li {
+					position: relative;
+					float: left;
+					width: 160px;
+					margin: 0;
+					padding: 0;
+
+					&:hover {
+						background-color: #555;
+
+						ul li {
+							overflow: visible;
+							height: 1.5em;
+						}
+					}
+
+					&:last-child ul {
+						left: -100%;
+						width: 100%;
+					}
+
+					a {
+						display: block;
+						margin: 0;
+						padding: 0;
+						text-align: left;
+					}
+
+					ul {
+						list-style: none;
+						position: absolute;
+						top: 100%;
+						left: 0;
+
+						li {
+							overflow: hidden;
+							margin: 0;
+							padding: 0;
+							width: 200%;
+							height: 0;
+							border: none;
+							background: #eee;
+							-moz-transition: .01s;
+							-webkit-transition: .01s;
+							-o-transition: .01s;
+							-ms-transition: .01s;
+							transition: .01s;
+
+							a {
+								height: 1.5em;
+								text-align: left;
+								font-weight: bold;
+
+								&:hover {
+									background: #999;
+									color: #fff;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* navigator */
+/*
+.nav {
+	margin: 0.5em;
+	padding: 0;
+	text-decoration: none;
+	font-weight: bold;
+	color: #eee;
+}
+*/
+/* debug */
+
+.debug_dump {
+	background-color: #eee;
+	margin: 10px 10px 10px 10px;
+	font-size: 0.8em;
+}
