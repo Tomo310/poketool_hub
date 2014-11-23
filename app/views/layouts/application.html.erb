@@ -8,31 +8,12 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-	<header id="navbar">
-		<div class= "site-box">
-			<div class="container">
-				<%= link_to "Poketool Hub", root_path, id: "logo" %>
-				<ul class="nav header">
-					<li><%= link_to "Home", root_path, class: "nav" %></li>
-					<li><%= link_to "Help", '#', class: "nav" %></li>
-					<li><%= link_to "ポケモン図鑑", '#', class: "nav" %></li>
-					<li><%= link_to "ダメージ計算機", '#', class: "nav" %></li>
-					<li><span class="dropmenu">
-						<ul class="no-js">
-						<li><%= link_to "その他 ▼", '#', class: "clicker" %>
-							<ul>
-								<li><%= link_to "個体値・ステータス判定", '#' %></li>
-								<li><%= link_to "個体管理ツール", '#' %></li>
-							</ul>
-						</li></ul>
-					</span></li>
-				</ul>
-			</div>
-		</div>
-	</header>
-
+	<%= render 'layouts/header' %>
 	<div class= "site-box">
 		<div class="container">
+			<% flash.each do |key, value| %>
+				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+			<% end %>
 			<%= yield %>
 			<%= debug(params) if Rails.env.development? %>
 		</div>

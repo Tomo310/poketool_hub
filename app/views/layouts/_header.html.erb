@@ -1,0 +1,28 @@
+<header id="navbar">
+	<div class= "site-box">
+		<div class="container">
+			<%= link_to "Poketool Hub", root_path, id: "logo" %>
+			<ul class="nav-header">
+				<li class="nav"><%= link_to "Home", root_path %></li>
+				<li class="nav"><%= link_to "Help", '#' %></li>
+				<li class="nav"><%= link_to "ポケモン図鑑", '#' %></li>
+				<li class="nav"><%= link_to "ダメージ計算機", '#' %></li>
+				<li><span class="dropmenu">
+					<ul class="no-js">
+					<li><%= link_to "その他 ▼", '#', class: "clicker" %>
+						<ul>
+							<li><%= link_to "個体値・ステータス判定", '#' %></li>
+							<li><%= link_to "個体管理ツール", '#' %></li>
+						</ul>
+					</li></ul>
+				</span></li>
+			</ul>
+			<span class="session-nav">
+				<% if signed_in? %>
+					<%= link_to "サインアウト", signout_path, method: "delete" %>
+				<% else %>
+				<% end %>
+			</span>
+		</div>
+	</div>
+</header>
