@@ -13,6 +13,8 @@ gem 'will_paginate'
 
 group :development, :test do
 	gem 'rspec-rails'
+	# RSpec 3から、itsメソッドを使用するのに必要となったらしい
+	gem 'rspec-its'
 #	gem 'spork-rails', '4.0.0'
 #	gem 'guard-spork', '1.5.0'
 #	gem 'childprocess', '0.3.6'
